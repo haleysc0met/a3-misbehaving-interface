@@ -34,12 +34,16 @@ window.addEventListener('DOMContentLoaded', () => {
   if (slider3) {
     slider3.addEventListener('input', function() {
       if (text) text.style.fontSize = slider3.value + 'px';
+      const usernameInput = document.getElementById('player-username');
+setTimeout(() => {
+  usernameInput.style.display = 'block';
+}, 3000);
     });
   }
 });
 
 // ! username box
-const usernameInput = document.getElementById('player-username');
-setTimeout(() => {
-  usernameInput.style.display = 'block';
-}, 3000);
+// const usernameInput = document.getElementById('player-username');
+// setTimeout(() => {
+//   usernameInput.style.display = 'block';
+// }, 3000);
