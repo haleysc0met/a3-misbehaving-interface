@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page Title Goes Here</title>
-        <!-- ! css -->
-        <link rel="stylesheet" href="styles.css">
-    </head>
-  <body>
-<!-- ! main div/opening message-->
- <div>
-<h1> Welcome! </h1>
-<p> Opening message text </p>
- </div>
- <!-- !text slider that doesnt work -->
- <div id="text-size">
-    <h1> NOTICE:</h1>
-<p> if you cannot read the previous message, please ensure you've adjusted the text based on your browser's interface text-rendering system. If you have no idea what that means, just use the slider below to adjust the text size temporarily: </p>
-<input type="range" id="text-slider" min="10" max="100" value="16">
-<span id="text-size-value">16</span>px
- </div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title Goes Here</title>
+    <!-- ! css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ! main div/opening message-->
+    <div class="container">
+        <h1> Welcome! </h1>
+        <p> Opening message text </p>
+    </div>
+    <!-- !text slider that doesnt work -->
+    <div id="text-size">
+        <h1> NOTICE:</h1>
+        <p> If you cannot read the previous message, please ensure you've adjusted the text based on your browser's interface text-rendering system. If you have no idea what that means, just use the slider below to adjust  the text size temporarily: </p>
+        <input type="range" id="text-slider" min="10" max="100" value="16">
+        <span id="text-size-value">16</span>px
+    </div>
+<div class="text-size">
+
+    
+</div>
     <!-- ! javascript -->
-     <script src="script.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
