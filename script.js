@@ -38,3 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// ! username box
+const usernameInput = document.getElementById('player-username');
+setTimeout(() => {
+  usernameInput.style.display = 'block';
+}, 3000);

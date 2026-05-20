@@ -37,6 +37,13 @@
     font-size: 5px;
 }
 
+#player-username {
+    display: none;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 /* ! classes */
 
 /* ?main container */
@@ -64,4 +71,10 @@
     justify-content: center;
    margin-top: 10px;
    padding: 10px;
+}
+.username {
+    display: hidden;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 14px;
 }
