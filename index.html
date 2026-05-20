@@ -15,7 +15,7 @@
         <!-- ! main div/opening message-->
         <div id="opening" class="container">
             <h1> Welcome! </h1>
-            <p> Opening message text </p>
+            <p id="resize"> Opening message text </p>
         </div>
         <!-- !text slider that doesnt work -->
         <div id="container1" class="flex1">
@@ -23,18 +23,20 @@
             <p id="notice1"> If you cannot read the previous message, please ensure you've adjusted the text based on your browser's
                 interface text-rendering system. If you have no idea what that means, just use the slider below to
                 adjust the text size temporarily: </p>
-            <input type="range" id="slider1" min="10" max="100" value="16" >
+            <input type="range" id="slider1" min="10" max="100" value="24">
             <!-- <span id="slider1">16</span>px -->
         </div>
         <!-- ! second slider that also doesn't work -->
         <div id="container2" class="hidden">
+            <p> Wait... I forgot that one was broken, try this one instead!</p>
             <input type="range" id="slider2" min="10" max="100" value="16" >
             <span id="text-size-value">16</span>px
         </div>
         <!-- ! third slider that DOES work -->
         <div id="container3" class="hidden">
+             <p> No no no no no wait okay this one works I swear I tried it this morning</p>
             <input type="range" id="slider3" min="10" max="100" value="16" >
-            <span id="text-size-value">16</span>px
+            <span id="text-size-value">5</span>px
         </div>
 
     </div>

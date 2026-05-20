@@ -33,7 +33,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // Step 3: Handle Slider 3 Interaction (The Working One)
   if (slider3) {
     slider3.addEventListener('input', function(e) {
-      text.style.fontSize = e.target.value + 'px';
+      // e.target.value tracks the slider handle position perfectly
+      const liveValue = e.target.value;
+      
+      // Update text size immediately
+      if (text) {
+        text.style.fontSize = liveValue + 'px';
+      }
     });
   }
 });
