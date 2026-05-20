@@ -1,4 +1,5 @@
-.container {
+/* *classes */
+#container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,12 +10,26 @@
     margin: auto;
 }
 
-.hidden-slider {
+.container2 {
     display: none;
 }
 
-.slider-container {
+#container3 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+/* *IDS */
+
+#slider1 {
+    width: 200px;
+}
+
+#slider2 {
+    width: 200px;
+}
+
+#slider3 {
+    width: 200px;
 }
