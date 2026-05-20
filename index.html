@@ -8,7 +8,8 @@
     <!-- ! css -->
     <link rel="stylesheet" href="style.css">
 </head>
-
+<!-- ! javascript -->
+        <script src="script.js" defer></script>
 <body>
     <div class="container">
         <!-- ! main div/opening message-->
@@ -22,21 +23,20 @@
             <p id="notice1"> If you cannot read the previous message, please ensure you've adjusted the text based on your browser's
                 interface text-rendering system. If you have no idea what that means, just use the slider below to
                 adjust the text size temporarily: </p>
-            <input type="range" id="text-slider" min="10" max="100" value="16" id="slider1">
-            <span id="text-size-value">16</span>px
+            <input type="range" id="slider1" min="10" max="100" value="16" >
+            <!-- <span id="slider1">16</span>px -->
         </div>
         <!-- ! second slider that also doesn't work -->
         <div id="container2" class="hidden">
-            <input type="range" id="text-slider" min="10" max="100" value="16" id="slider2">
+            <input type="range" id="slider2" min="10" max="100" value="16" >
             <span id="text-size-value">16</span>px
         </div>
         <!-- ! third slider that DOES work -->
         <div id="container3" class="hidden">
-            <input type="range" id="text-slider" min="10" max="100" value="16" id="slider3">
+            <input type="range" id="slider3" min="10" max="100" value="16" >
             <span id="text-size-value">16</span>px
         </div>
-        <!-- ! javascript -->
-        <script src="script.js"></script>
+
     </div>
 </body>
 
