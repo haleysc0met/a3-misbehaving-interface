@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const slider1 = document.getElementById('slider1');
   const slider2 = document.getElementById('slider2');
   const slider3 = document.getElementById('slider3');
-  const text = document.getElementById('notice1');
+  const text = document.getElementById('resize');
 
   // Hardcode the initial states via JS just in case CSS fails
   if (container2) container2.style.display = 'none';
@@ -32,14 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Step 3: Handle Slider 3 Interaction (The Working One)
   if (slider3) {
-    slider3.addEventListener('input', function(e) {
-      // e.target.value tracks the slider handle position perfectly
-      const liveValue = e.target.value;
-      
-      // Update text size immediately
-      if (text) {
-        text.style.fontSize = liveValue + 'px';
-      }
+    slider3.addEventListener('input', function() {
+      if (text) text.style.fontSize = slider3.value + 'px';
     });
   }
 });
