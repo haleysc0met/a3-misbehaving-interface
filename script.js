@@ -64,47 +64,57 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }, 3000);
     }
+ if (!sessionStorage.getItem('usernameSubmittedAlert')) {
+            alert('Username submitted! Not that it was a good one, maybe you should work on that?');
+            sessionStorage.setItem('usernameSubmittedAlert', 'true');
+        
+        }
+
     // submit button alert
     const submitButton = document.getElementById('submitUsername');
-            if (submitButton) {
-                submitButton.addEventListener('click', function () {
-                    if (!localStorage.getItem('usernameSubmittedAlert')) {
 
-                        alert('Username submitted! Not that is was a good one, maybe you should work on that?');
-                        localStorage.setItem('usernameSubmittedAlert', 'true');
-                    }
-                });
+    if (submitButton) {
+        submitButton.addEventListener('click', function () {
+            if (!localStorage.getItem('usernameSubmittedAlert')) {
+                alert('Username submitted! Not that it was a good one, maybe you should work on that?');
+                localStorage.setItem('usernameSubmittedAlert', 'true');
+
+                // 1. Reveal the button after the alert closes
+                const runawayBtn = document.getElementById('runawayButton');
+                if (runawayBtn) {
+                    runawayBtn.style.display = 'block';
+                    // Set an initial starting position on the screen
+                    runawayBtn.style.left = '45%';
+                    runawayBtn.style.top = '50%';
+                    // 2. Activate the trick: move away when the cursor gets close
+                    activateRunawayButton(runawayBtn);
+                }
             }
-            // button running away from the user
-  const runawayBtn = document.getElementById('next-button');
-            if (runawayBtn) {
-                runawayBtn.style.display = 'block';
-                runawayBtn.style.left = '45%';
-                runawayBtn.style.top = '50%';
-                activateRunawayButton(runawayBtn);
-            }
-}
-);
-//
-// runaway button function
-function activateRunawayButton(btn) {
-    document.addEventListener('mousemove', function (e) {
-        // Get the current position of the button
-        const btnRect = btn.getBoundingClientRect();
-        const btnCenterX = btnRect.left + btnRect.width / 2;
-        const btnCenterY = btnRect.top + btnRect.height / 2;
-        // math for how close cursor is to the button
-        const distance = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
+        });
+        
+       
+        // Function that handles the running away logic
+        function activateRunawayButton(btn) {
+            document.addEventListener('mousemove', function (e) {
+                // Get the current position of the button
+                const btnRect = btn.getBoundingClientRect();
+                const btnCenterX = btnRect.left + btnRect.width / 2;
+                const btnCenterY = btnRect.top + btnRect.height / 2;
 
-        // If the cursor gets closer than 80px, move the button
-        if (distance < 80) {
-            // Generate a random position within the visible window bounds
-            const newX = Math.random() * (window.innerWidth - btnRect.width);
-            const newY = Math.random() * (window.innerHeight - btnRect.height);
+                // Calculate how far the cursor is from the center of the button
+                const distance = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
 
-            btn.style.left = newX + 'px';
-            btn.style.top = newY + 'px';
+                // If the cursor gets closer than 80 pixels, move the button
+                if (distance < 80) {
+                    // Generate a random position within the visible window bounds
+                    const newX = Math.random() * (window.innerWidth - btnRect.width);
+                    const newY = Math.random() * (window.innerHeight - btnRect.height);
+
+                    // Apply the new position
+                    btn.style.left = newX + 'px';
+                    btn.style.top = newY + 'px';
+                }
+            });
         }
-    });
-}
-// Remove extra closing braces and parentheses
+    }
+});
