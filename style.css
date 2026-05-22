@@ -107,6 +107,9 @@ display: block;
 #next2 {
     display: block;
 }
+#image1 {
+    display: none;
+}
 /* ! classes */
 
 /* ?main container */

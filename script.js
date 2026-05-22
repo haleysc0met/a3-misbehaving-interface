@@ -119,10 +119,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (helpfulDiv) {
                     setTimeout(() => {
                         helpfulDiv.style.display = 'block'; // Shows the 2nd div after 3s more
-                    }, 7000); }
+                    }, 7000);
+                }
             }, 5000);
 
         }
+        const button = document.getElementById('next2');
+        const image = document.getElementById('image1');
+        button.addEventListener('click', function () {
+            image.style.display = 'block';
+        });
     }
 });
 
