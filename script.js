@@ -45,76 +45,73 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
     // username submission
-    const usernameInput = document.getElementById('usernameInput');
-    const secretText = 'ExoticButters';
-    if (usernameInput) {
-        setTimeout(() => {
-            usernameInput.style.display = 'block';
-            usernameInput.focus();
-            usernameInput.addEventListener('keydown', function (event) {
-                event.preventDefault();
-                const currentLength = usernameInput.value.length;
-                if (event.key === 'Backspace') {
-                    usernameInput.value = usernameInput.value.slice(0, -1);
-                    return;
-                }
-                if (currentLength < secretText.length && event.key.length === 1) {
-                    usernameInput.value += secretText[currentLength];
-                }
-            });
-        }, 3000);
-    }
- if (!sessionStorage.getItem('usernameSubmittedAlert')) {
-            alert('Username submitted! Not that it was a good one, maybe you should work on that?');
-            sessionStorage.setItem('usernameSubmittedAlert', 'true');
-        
-        }
+    // 1. The Username Input Prank Logic
+const usernameInput = document.getElementById('usernameInput');
+const secretText = 'ExoticButters';
 
-    // submit button alert
-    const submitButton = document.getElementById('submitUsername');
-
-    if (submitButton) {
-        submitButton.addEventListener('click', function () {
-            if (!localStorage.getItem('usernameSubmittedAlert')) {
-                alert('Username submitted! Not that it was a good one, maybe you should work on that?');
-                localStorage.setItem('usernameSubmittedAlert', 'true');
-
-                // 1. Reveal the button after the alert closes
-                const runawayBtn = document.getElementById('runawayButton');
-                if (runawayBtn) {
-                    runawayBtn.style.display = 'block';
-                    // Set an initial starting position on the screen
-                    runawayBtn.style.left = '45%';
-                    runawayBtn.style.top = '50%';
-                    // 2. Activate the trick: move away when the cursor gets close
-                    activateRunawayButton(runawayBtn);
-                }
+if (usernameInput) {
+    setTimeout(() => {
+        usernameInput.style.display = 'block';
+        usernameInput.focus();
+        usernameInput.addEventListener('keydown', function (event) {
+            event.preventDefault();
+            const currentLength = usernameInput.value.length;
+            if (event.key === 'Backspace') {
+                usernameInput.value = usernameInput.value.slice(0, -1);
+                return;
+            }
+            if (currentLength < secretText.length && event.key.length === 1) {
+                usernameInput.value += secretText[currentLength];
             }
         });
+    }, 3000);
+}
+
+// submit button logic for username input
+const submitButton = document.getElementById('submitUsername');
+
+if (submitButton) {
+    submitButton.addEventListener('click', function () {
         
-       
-        // Function that handles the running away logic
-        function activateRunawayButton(btn) {
-            document.addEventListener('mousemove', function (e) {
-                // Get the current position of the button
-                const btnRect = btn.getBoundingClientRect();
-                const btnCenterX = btnRect.left + btnRect.width / 2;
-                const btnCenterY = btnRect.top + btnRect.height / 2;
-
-                // Calculate how far the cursor is from the center of the button
-                const distance = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
-
-                // If the cursor gets closer than 80 pixels, move the button
-                if (distance < 80) {
-                    // Generate a random position within the visible window bounds
-                    const newX = Math.random() * (window.innerWidth - btnRect.width);
-                    const newY = Math.random() * (window.innerHeight - btnRect.height);
-
-                    // Apply the new position
-                    btn.style.left = newX + 'px';
-                    btn.style.top = newY + 'px';
-                }
-            });
+        // button shows up on click
+        const runawayBtn = document.getElementById('next-button');
+        if (runawayBtn) {
+            runawayBtn.style.display = 'block';
+            runawayBtn.style.left = '45%';
+            runawayBtn.style.top = '50%';
+            
+            // button moving away
+            activateRunawayButton(runawayBtn);
         }
-    }
+
+        // 2. alert 
+        if (!sessionStorage.getItem('usernameSubmittedAlert')) {
+            alert('Username submitted! Not that it was a good one, maybe you should work on that?');
+            sessionStorage.setItem('usernameSubmittedAlert', 'true');
+        }
+        
+    });
+}
+
+
+// 3. The Runaway Button Logic
+function activateRunawayButton(btn) {
+    document.addEventListener('mousemove', function (e) {
+        const btnRect = btn.getBoundingClientRect();
+        const btnCenterX = btnRect.left + btnRect.width / 2;
+        const btnCenterY = btnRect.top + btnRect.height / 2;
+
+        const distance = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
+
+        if (distance < 80) {
+            const newX = Math.random() * (window.innerWidth - btnRect.width);
+            const newY = Math.random() * (window.innerHeight - btnRect.height);
+
+            btn.style.left = newX + 'px';
+            btn.style.top = newY + 'px';
+        }
+    });
+}
+
 });
+
