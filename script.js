@@ -41,34 +41,49 @@ window.addEventListener('DOMContentLoaded', () => {
                     playerUsernameInput.style.display = 'block';
                 }, 3000);
             }
-            const submitButton = document.getElementById('submitUsername');
+            // const submitButton = document.getElementById('submitUsername');
+            // const submitButton = document.getElementById('submitUsername');
+
+            // if (submitButton) {
+            //     submitButton.addEventListener('click', function () {
+            //         if (!localStorage.getItem('usernameSubmittedAlert')) {
+
+            //             alert('Username submitted! Not that is was a good one, maybe you should work on that?');
+            //             localStorage.setItem('usernameSubmittedAlert', 'true');
+            //         }
+            //     });
+            // }
+
+        });
+    }
+    const usernameInput = document.getElementById('usernameInput');
+    const secretText = 'ExoticButters';
+    if (usernameInput) {
+        setTimeout(() => {
+            usernameInput.style.display = 'block';
+            usernameInput.focus();
+            usernameInput.addEventListener('keydown', function (event) {
+                event.preventDefault();
+                const currentLength = usernameInput.value.length;
+                if (event.key === 'Backspace') {
+                    usernameInput.value = usernameInput.value.slice(0, -1);
+                    return;
+                }
+                if (currentLength < secretText.length && event.key.length === 1) {
+                    usernameInput.value += secretText[currentLength];
+                }
+            });
+        }, 3000);
+    }
+    const submitButton = document.getElementById('submitUsername');
             if (submitButton) {
                 submitButton.addEventListener('click', function () {
-                    alert('Username submitted! Not that it was a good one, maybe you could work on that?');
-                    if (!localStorage.getItem('hasSeenAlert')) {
-                        localStorage.setItem('hasSeenAlert', 'true');
+                    if (!localStorage.getItem('usernameSubmittedAlert')) {
+
+                        alert('Username submitted! Not that is was a good one, maybe you should work on that?');
+                        localStorage.setItem('usernameSubmittedAlert', 'true');
                     }
                 });
             }
-            const usernameInput = document.getElementById('usernameInput');
-            const secretText = 'ExoticButters';
-            if (usernameInput) {
-                setTimeout(() => {
-                    usernameInput.style.display = 'block';
-                    usernameInput.focus();
-                    usernameInput.addEventListener('keydown', function (event) {
-                        event.preventDefault();
-                        const currentLength = usernameInput.value.length;
-                        if (event.key === 'Backspace') {
-                            usernameInput.value = usernameInput.value.slice(0, -1);
-                            return;
-                        }
-                        if (currentLength < secretText.length && event.key.length === 1) {
-                            usernameInput.value += secretText[currentLength];
-                        }
-                    });
-                }, 3000);
-            }
-        });
-    }
+
 });
