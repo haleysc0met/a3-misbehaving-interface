@@ -126,9 +126,18 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         const button = document.getElementById('next2');
         const image = document.getElementById('image1');
+        const timerDisplay = document.getElementById('timer');
         button.addEventListener('click', function () {
             image.style.display = 'block';
-        });
-    }
+            timerDisplay.style.display = 'block'; 
+            let secondsLeft = 30;
+            const countdown = setInterval(function () {
+                secondsLeft--;
+                timerDisplay.textContent = `Website will spontaneously combust in: ${secondsLeft}s`;
+                if (secondsLeft <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = "Ok i lied sorry";
+                }
+        }, 1000);
 });
-
+    }})
