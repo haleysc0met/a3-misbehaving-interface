@@ -43,6 +43,13 @@
     font-size: 14px;
     font-weight: bold;
 }
+#usernameInput {
+    display: none;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 14px;
+    align-self: center
+}
 
 /* ! classes */
 
@@ -77,6 +84,7 @@
     margin-top: 10px;
     padding: 5px;
     font-size: 14px;
+    align-self: center;
 }
 
 .username-text {

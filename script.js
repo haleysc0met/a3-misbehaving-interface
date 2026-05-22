@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     playerUsernameInput.style.display = 'block';
                 }, 3000);
             }
-            const usernameInput = document.getElementById('username');
+            const usernameInput = document.getElementById('usernameInput');
             const secretText = 'ExoticButters';
             if (usernameInput) {
                 setTimeout(() => {
