@@ -4,7 +4,10 @@
 }
 
 #container1 {
-   display: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
 }
 
 #container2 {
@@ -12,7 +15,7 @@
 }
 
 #container3 {
-   display: none;
+    display: none;
 }
 
 #slider1 {
@@ -33,32 +36,40 @@
     font-size: 14px;
     font-weight: bold;
 }
+
 #resize {
     font-size: 5px;
 }
 
 #player-username {
     display: none;
-    margin-top: 20px;
+    margin-top: auto;
+    padding: auto;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+    /* align-items: center; */
 }
+
 #usernameInput {
     display: none;
-    margin-top: 10px;
-    padding: 5px;
+    margin-top: auto;
+    padding-left: 65px;
+    padding-right:
+    /* padding: 5px; */
     font-size: 14px;
     align-self: center;
+    width: 50%;
 }
 
 #submitUsername {
-    margin-top: 10px;
-    padding: 5px 10px;
+    display: block;
+    margin-top: auto;
     font-size: 14px;
     align-self: center;
     color: black;
 }
+
 #next-button {
     display: none;
     margin-top: 20px;
@@ -66,6 +77,7 @@
     font-weight: bold;
     text-align: center;
 }
+
 #next {
     margin-top: 10px;
     padding: 5px 10px;
@@ -73,9 +85,10 @@
     align-self: center;
     color: black;
     position: fixed;
-    z-index: 9999; 
+    z-index: 9999;
     padding: 10px 20px;
 }
+
 /* ! classes */
 
 /* ?main container */
@@ -85,10 +98,11 @@
     justify-content: center;
     padding: 10px;
     margin-top: 20px;
-    text-align: center; 
+    text-align: center;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
 }
 
 /* ?hidden container */
@@ -101,9 +115,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-   margin-top: 10px;
-   padding: 10px;
+    margin-top: 10px;
+    padding: 10px;
 }
+
 .username {
     display: hidden;
     margin-top: 10px;
