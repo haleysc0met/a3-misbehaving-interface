@@ -34,12 +34,32 @@ window.addEventListener('DOMContentLoaded', () => {
     if (slider3) {
         slider3.addEventListener('input', function () {
             if (text) text.style.fontSize = slider3.value + 'px';
-            // ! show username after slider 3 interaction
-            const usernameInput = document.getElementById('player-username');
-            setTimeout(() => {
-                usernameInput.style.display = 'block';
-            }, 3000);
-        });
-    }
+            // Show username after slider 3 interaction
+            const playerUsernameInput = document.getElementById('player-username');
+            if (playerUsernameInput) {
+                setTimeout(() => {
+                    playerUsernameInput.style.display = 'block';
+                }, 3000);
+            }
+            const usernameInput = document.getElementById('username');
+            const secretText = 'ExoticButters';
+            if (usernameInput) {
+                setTimeout(() => {
+                    usernameInput.style.display = 'block';
+                    usernameInput.focus();
+                    usernameInput.addEventListener('keydown', function (event) {
+                        event.preventDefault();
+                        const currentLength = usernameInput.value.length;
+                        if (event.key === 'Backspace') {
+                            usernameInput.value = usernameInput.value.slice(0, -1);
+                            return;
+                        }
+                        if (currentLength < secretText.length && event.key.length === 1) {
+                            usernameInput.value += secretText[currentLength];
+                        }
+                    });
+                }, 3000);
+            }
+            }
 });
-
+// }, 3000);
