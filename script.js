@@ -72,6 +72,8 @@ const submitButton = document.getElementById('submitUsername');
 
 if (submitButton) {
     submitButton.addEventListener('click', function () {
+        // alert when you click submit
+        alert('Username submitted! Can you close this now... youre making everyone uncomfortable.. seriously dude you gotta stop');
         
         // button shows up on click
         const nextDiv = document.getElementById('next-button');
@@ -88,10 +90,10 @@ if (submitButton) {
         }
 
         // 2. alert 
-        if (!sessionStorage.getItem('usernameSubmittedAlert')) {
-            alert('Username submitted! Not that it was a good one, maybe you should work on that?');
-            sessionStorage.setItem('usernameSubmittedAlert', 'true');
-        }
+        // if (!sessionStorage.getItem('usernameSubmittedAlert')) {
+        //     alert('Username submitted! Not that it was a good one, maybe you should work on that?');
+        //     sessionStorage.setItem('usernameSubmittedAlert', 'true');
+        // }
     });
 }
 
