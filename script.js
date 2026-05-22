@@ -113,7 +113,16 @@ function activateRunawayButton(btn) {
             btn.style.top = newY + 'px';
         }
     });
+const motivationalDiv = document.getElementById('motivational-div');
+            if (motivationalDiv) {
+                setTimeout(() => {
+                    motivationalDiv.style.display = 'block';
+                }, 5000);
+            }
 }
+
+
+
 
 });
 

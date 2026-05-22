@@ -55,7 +55,7 @@
     display: none;
     margin-top: auto;
     padding-left: 65px;
-    padding-right:
+    /* padding-right: */
     /* padding: 5px; */
     font-size: 14px;
     align-self: center;
@@ -89,6 +89,13 @@
     padding: 10px 20px;
 }
 
+#motivational-text {
+display: none;
+}
+#motivational-div {
+display: hidden;
+
+}
 /* ! classes */
 
 /* ?main container */
