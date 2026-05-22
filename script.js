@@ -74,8 +74,11 @@ if (submitButton) {
     submitButton.addEventListener('click', function () {
         
         // button shows up on click
-        const runawayBtn = document.getElementById('next-button');
-        if (runawayBtn) {
+        const nextDiv = document.getElementById('next-button');
+         if (nextDiv) {
+            nextDiv.style.display = 'block'; 
+             const runawayBtn = document.getElementById('next');
+        if (runawayBtn) 
             runawayBtn.style.display = 'block';
             runawayBtn.style.left = '45%';
             runawayBtn.style.top = '50%';
@@ -89,12 +92,11 @@ if (submitButton) {
             alert('Username submitted! Not that it was a good one, maybe you should work on that?');
             sessionStorage.setItem('usernameSubmittedAlert', 'true');
         }
-        
     });
 }
 
 
-// 3. The Runaway Button Logic
+// button logic 
 function activateRunawayButton(btn) {
     document.addEventListener('mousemove', function (e) {
         const btnRect = btn.getBoundingClientRect();

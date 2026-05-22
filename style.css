@@ -72,6 +72,9 @@
     font-size: 14px;
     align-self: center;
     color: black;
+    position: fixed;
+    z-index: 9999; 
+    padding: 10px 20px;
 }
 /* ! classes */
 
