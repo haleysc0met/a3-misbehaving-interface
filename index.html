@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <!-- ! javascript -->
-        <script src="script.js" defer></script>
+<script src="script.js" defer></script>
+
 <body>
     <div class="container">
         <!-- ! main div/opening message-->
@@ -20,7 +21,8 @@
         <!-- !text slider that doesnt work -->
         <div id="container1" class="flex1">
             <h1> NOTICE:</h1>
-            <p id="notice1"> If you cannot read the previous message, please ensure you've adjusted the text based on your browser's
+            <p id="notice1"> If you cannot read the previous message, please ensure you've adjusted the text based on
+                your browser's
                 interface text-rendering system. If you have no idea what that means, just use the slider below to
                 adjust the text size temporarily: </p>
             <input type="range" id="slider1" min="10" max="100" value="24">
@@ -29,13 +31,13 @@
         <!-- ! second slider that also doesn't work -->
         <div id="container2" class="hidden">
             <p> Wait... I forgot that one was broken, try this one instead!</p>
-            <input type="range" id="slider2" min="10" max="100" value="16" >
+            <input type="range" id="slider2" min="10" max="100" value="16">
             <span id="text-size-value">1</span>px
         </div>
         <!-- ! third slider that DOES work -->
         <div id="container3" class="hidden">
-             <p> No no no no no wait okay this one works I swear I tried it this morning</p>
-            <input type="range" id="slider3" min="10" max="100" value="5" >
+            <p> No no no no no wait okay this one works I swear I tried it this morning</p>
+            <input type="range" id="slider3" min="10" max="100" value="5">
             <span id="text-size-value"> 1 </span>px
         </div>
         <!-- ! player username -->
@@ -44,7 +46,7 @@
             <p> Please redirect to the username input field: </p>
             <label for="username">Enter your username</label>
             <input type="text" class="username" id="usernameInput" name="username">
-            <button text-align=centre id="submitUsername">Submit</button> 
+            <button text-align=centre id="submitUsername">Submit</button>
         </div>
         <!-- ! running button -->
         <div id="next-button" class="hidden">
@@ -53,13 +55,18 @@
             <button id="next">Next</button>
         </div>
         <!-- ! motivational text -->
-        <div id="motivational-div" class="hidden"> 
-        <p id="motivational-txt"> well you're gonna have to try a little harder than that lol...</p>
+        <div id="motivational-div">
+            <p id="motivational-txt"> well you're gonna have to try a little harder than that lol...</p>
+             <p id="motivational-txt2"> okay, you know what? here. here's a different button since you want to be
+                difficult about this</p>
+            <button id="next2">hey first time being a button.. kinda nervous..</button>
         </div>
-        <div id="helpful-div"> 
-        <p id="motivational-txt2"> okay, you know what? here. here's a different button since you want to be difficult about this</p>
-        <button id="next2">hey first time being a button.. kinda nervous..</button>
-        </div>
+        <!-- <div id="helpful-div">
+            <p id="motivational-txt2"> okay, you know what? here. here's a different button since you want to be
+                difficult about this</p>
+            <button id="next2">hey first time being a button.. kinda nervous..</button>
+        </div> -->
     </div>
 </body>
+
 </html>

@@ -102,10 +102,10 @@ display: none;
 }
 
 #motivational-txt2 {
-display: none;
+display: block;
 }
 #next2 {
-    display: none;
+    display: block;
 }
 /* ! classes */
 

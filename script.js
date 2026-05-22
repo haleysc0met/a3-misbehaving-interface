@@ -109,21 +109,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 btn.style.top = newY + 'px';
             }
         });
-       const motivationalDiv = document.getElementById('motivational-div');
+        const motivationalDiv = document.getElementById('motivational-div');
 
-if (motivationalDiv) {
-    setTimeout(() => {
-        motivationalDiv.style.display = 'block'; // Shows the 1st div after 5s
-
-        const helpfulDiv = document.getElementById('helpful-div');
-        if (helpfulDiv) {
+        if (motivationalDiv) {
             setTimeout(() => {
-                helpfulDiv.style.display = 'block'; // Shows the 2nd div after 3s more
+                motivationalDiv.style.display = 'block'; // Shows the 1st div after 5s
+
+                const helpfulDiv = document.getElementById('helpful-div');
+                if (helpfulDiv) {
+                    setTimeout(() => {
+                        helpfulDiv.style.display = 'block'; // Shows the 2nd div after 3s more
+                    }, 7000); }
             }, 5000);
-        }
-    }, 3000);
 
         }
     }
-    });
+});
 
