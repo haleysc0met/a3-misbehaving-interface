@@ -42,15 +42,23 @@
     margin-top: 20px;
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
 }
 #usernameInput {
     display: none;
     margin-top: 10px;
     padding: 5px;
     font-size: 14px;
-    align-self: center
+    align-self: center;
 }
 
+#submitUsername {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    align-self: center;
+    color: black;
+}
 /* ! classes */
 
 /* ?main container */

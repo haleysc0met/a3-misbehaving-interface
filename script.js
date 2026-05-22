@@ -41,6 +41,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     playerUsernameInput.style.display = 'block';
                 }, 3000);
             }
+            const submitButton = document.getElementById('submitUsername');
+            if (submitButton) {
+                submitButton.addEventListener('click', function () {
+                    alert('Username submitted! Not that it was a good one, maybe you could work on that?');
+                    if (!localStorage.getItem('hasSeenAlert')) {
+                        localStorage.setItem('hasSeenAlert', 'true');
+                    }
+                });
+            }
             const usernameInput = document.getElementById('usernameInput');
             const secretText = 'ExoticButters';
             if (usernameInput) {
