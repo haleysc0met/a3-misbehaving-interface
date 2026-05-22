@@ -92,9 +92,20 @@
 #motivational-text {
 display: none;
 }
-#motivational-div {
-display: hidden;
 
+#motivational-div {
+display: none;
+}
+
+#helpful-div {
+display: none;
+}
+
+#motivational-txt2 {
+display: none;
+}
+#next2 {
+    display: none;
 }
 /* ! classes */
 
