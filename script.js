@@ -60,6 +60,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     });
                 }, 3000);
             }
-            }
+        });
+    }
 });
-// }, 3000);
